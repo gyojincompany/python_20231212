@@ -16,9 +16,13 @@ class MyWindow(QMainWindow, form_class):
         self.setWindowIcon(QIcon(""))
 
         self.pushButton.clicked.connect(self.btnClick) # 시그널
+        self.clearButton.clicked.connect(self.clearClick) # 시그널
 
     def btnClick(self): # 슬롯
-        self.lineEdit.setText("안녕하세요!")
+        self.lineEdit.setText("안녕하세요!") # lineEdit에 텍스트 출력하기
+
+    def clearClick(self): #슬롯
+        self.lineEdit.clear() # lineEdit에 입력된 텍스트 삭제
 
 
 app = QApplication(sys.argv)
